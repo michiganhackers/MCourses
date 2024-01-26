@@ -10,21 +10,44 @@ import requests
 import json
 
 ACCESS_TOKEN = ""
-TERMS = {}
+TERMS = []
 TERM_TO_SCHOOLS_DICT = {}
 
 # flask --app MCoursesFlaskApp --debug run --host 0.0.0.0 --port 8000
 
+def UM_API_set_access_token():
+    api_url = "https://gw.api.it.umich.edu/um/oauth2/token"
+    headers = {"content-type": "application/x-www-form-urlencoded"}
+    data = {
+        'grant_type': 'client_credentials',
+        'client_id': '',  # CLIENT_KEY
+        'client_secret': '',  # CLIENT_SECRET
+        'scope': 'umscheduleofclasses'  # umscheduleofclasses
+    }
 
-# TODO Add in expired (?) access token guard, may need to add in a get_access_token func then also
+    response = requests.post(api_url, headers=headers, data=data)
+    response_dict = response.json()
+
+    global ACCESS_TOKEN 
+    ACCESS_TOKEN = response_dict["access_token"]
+
+    print(response.json())
+    return response
+
+
 def UM_API_get_terms():
     global TERMS
-    if TERMS != {}:
+    if TERMS != []:
         return TERMS
 
     api_url = "https://gw.api.it.umich.edu/um/Curriculum/SOC/Terms"
     headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
     response = requests.get(api_url, headers=headers)
+
+    if response.status_code == 401:
+        UM_API_set_access_token()
+        response = requests.get(api_url, headers=headers)
+
     response_dict = response.json()
     TERMS = response_dict["getSOCTermsResponse"]["Term"]
     return TERMS
@@ -40,6 +63,12 @@ def UM_API_get_schools_for_term(term_code):
     api_url = f"https://gw.api.it.umich.edu/um/Curriculum/SOC/Terms/{term_code}/Schools"
     headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
     response = requests.get(api_url, headers=headers)
+
+    if response.status_code == 401:
+        UM_API_set_access_token()
+        response = requests.get(api_url, headers=headers)
+
+
     response_dict = response.json()
     # TERM_TO_SCHOOLS_DICT[term_code] = 
 
@@ -50,8 +79,11 @@ def UM_API_get_schools_for_term(term_code):
 def get_services():
     """Return a list of services available."""
     context = {
+        "url": "/api/",
         "courses": "/api/courses/",
-        "url": "/api/"
+        "terms": "/api/terms/",
+        "schools": "/api/schools/",
+        "courseID": "/api/courses/<course_id> (test with course_id=12)"
     }
     return flask.jsonify(**context)
 
@@ -81,14 +113,24 @@ def get_terms():
     if True:
         response_dict = UM_API_get_terms()
 
+    print(TERMS)
+
     return flask.jsonify(response_dict)
 
 
-@MCoursesFlaskApp.app.route('/api/schools/', methods=["GET"])
-def get_schools():
+@MCoursesFlaskApp.app.route('/api/schools/<term_code>', methods=["GET"])
+def get_schools(term_code: int):
     # * atm, written for most recent term
-    terms = UM_API_get_terms()
-    schools = UM_API_get_schools_for_term(terms[0]["TermCode"])
+    # terms = UM_API_get_terms()
+    # schools = UM_API_get_schools_for_term(terms["TermCode"])
+    schools = UM_API_get_schools_for_term(term_code)
+
+    return flask.jsonify(schools)
+
+
+@MCoursesFlaskApp.app.route('/api/subjects/<school_code>', methods=["GET"])
+def get_subjects(school_code: string):
+    subjects = UM_API_get_subjects_for_school(school_code)
 
     return flask.jsonify(schools)
 
@@ -118,3 +160,10 @@ def get_course_id(course_id: int):
     }
 
     return flask.jsonify(**context)
+
+
+@MCoursesFlaskApp.app.route('/api/test/', methods=["GET"])
+def test():
+    response = UM_API_set_access_token()
+
+    return flask.jsonify()
