@@ -34,6 +34,7 @@ struct CourseItemView: View {
         name: "Data Structures and Algorithms",
         department: "EECS",
         number: 281,
+        credits: 4,
         description: "Introduction to the algorithm analysis and O-notation; Fundamental data structures including lists, stacks, queues, priority queues, hash tables, binary trees, search trees, balanced, trees, and graphs; searching and sorting algorithms; recursive algorithms; basic graph algorithms; introduction to greedy algorithms and divide and conquer strategy. Several programming assignments.",
         avgRating: 4.5,
         avgDifficulty: 0.68))

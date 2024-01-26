@@ -18,6 +18,159 @@
             endingLineNumber = "11"
             landmarkName = "CourseItemViewModel"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "E3716C80-5F72-4C9D-823A-3F7AA8A0C5BF - 2d1b17974afc8585"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of MCourses.CourseItemViewModel.courseItem : MCourses.CourseItem"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/MCourses/CourseItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "E3716C80-5F72-4C9D-823A-3F7AA8A0C5BF - 309484215eb3c219"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.CourseItemViewModel.courseItem.getter : MCourses.CourseItem"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/MCourses/CourseItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "E3716C80-5F72-4C9D-823A-3F7AA8A0C5BF - d2b79ad4acd45b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.CourseItemViewModel.courseItem.setter : MCourses.CourseItem"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/MCourses/CourseItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "E3716C80-5F72-4C9D-823A-3F7AA8A0C5BF - 4a71cd3a2b3d13bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.CourseItemViewModel.courseItem.modify : MCourses.CourseItem"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/MCourses/CourseItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "E3716C80-5F72-4C9D-823A-3F7AA8A0C5BF - a108b04872b33c89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.CourseItemViewModel.courseItem.modify : MCourses.CourseItem with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "E3716C80-5F72-4C9D-823A-3F7AA8A0C5BF - 6cd75004294f00cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.CourseItemViewModel.$courseItem.getter : Combine.Published&lt;MCourses.CourseItem&gt;.Publisher"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/MCourses/CourseItemViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "E3716C80-5F72-4C9D-823A-3F7AA8A0C5BF - b9f24ce6a50cba70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.CourseItemViewModel.$courseItem.setter : Combine.Published&lt;MCourses.CourseItem&gt;.Publisher"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "E3716C80-5F72-4C9D-823A-3F7AA8A0C5BF - 1fd8b0eb62b4752d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.CourseItemViewModel.$courseItem.modify : Combine.Published&lt;MCourses.CourseItem&gt;.Publisher"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "E3716C80-5F72-4C9D-823A-3F7AA8A0C5BF - fdcb0b4e9eb4b4f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.CourseItemViewModel.$courseItem.modify : Combine.Published&lt;MCourses.CourseItem&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A26FD554-4A38-4554-AB13-D977FAC36151"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MCourses/Authentication/GoogleSignInHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "signIn()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

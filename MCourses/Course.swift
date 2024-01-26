@@ -1,13 +1,14 @@
 //
-//  CourseItem.swift
+//  Course.swift
 //  MCourses
 //
-//  Created by Finn Moore on 11/2/23.
+//  Created by Finn Moore on 11/30/23.
 //
 
 import Foundation
 
-struct CourseItem: Identifiable, Decodable {
+
+struct Course: Identifiable, Decodable {
     var id: String?
     let name: String
     let department: String
@@ -15,5 +16,8 @@ struct CourseItem: Identifiable, Decodable {
     let credits: Int
     let description: String
     let avgRating: Double
-    let avgDifficulty: Double
+    let avgWorkload: Double
+    let avgWorth: Double
+    let avgEnjoyment: Double
+    let reviews: [Review]
 }
