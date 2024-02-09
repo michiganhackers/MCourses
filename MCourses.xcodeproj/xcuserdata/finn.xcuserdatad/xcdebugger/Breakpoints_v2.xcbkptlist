@@ -167,10 +167,323 @@
             filePath = "MCourses/Authentication/GoogleSignInHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "signIn()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F187CAE4-8C67-4491-9B3F-0A0E5C0DBE9B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MCourses/MCoursesApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "MCoursesApp"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "F187CAE4-8C67-4491-9B3F-0A0E5C0DBE9B - 51139c70a3c64158"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.MCoursesApp.init() -&gt; MCourses.MCoursesApp"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/MCourses/MCoursesApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "F187CAE4-8C67-4491-9B3F-0A0E5C0DBE9B - c9ae112c0be4dcdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.MCoursesApp.init(delegate: SwiftUI.UIApplicationDelegateAdaptor&lt;MCourses.AppDelegate&gt;) -&gt; MCourses.MCoursesApp"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/MCourses/MCoursesApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "F187CAE4-8C67-4491-9B3F-0A0E5C0DBE9B - 974a324c9fa64cf1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/MCourses/MCoursesApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66A66170-63A5-4B59-A6D6-06EF75925448"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MCourses/MCoursesApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "MCoursesApp"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "66A66170-63A5-4B59-A6D6-06EF75925448 - 8e49e0da16b931a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.MCoursesApp.delegate.getter : MCourses.AppDelegate"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "66A66170-63A5-4B59-A6D6-06EF75925448 - 51139c70a3c64158"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MCourses.MCoursesApp.init() -&gt; MCourses.MCoursesApp"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/MCourses/MCoursesApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "66A66170-63A5-4B59-A6D6-06EF75925448 - c87ad106748d076b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 0 of MCourses.MCoursesApp.init(delegate: SwiftUI.UIApplicationDelegateAdaptor&lt;MCourses.AppDelegate&gt;) -&gt; MCourses.MCoursesApp"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Hackers/MCourses/MCourses/MCoursesApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D313CC7-C5B8-49C2-81C0-9108110820C3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Celly/Meow/Celly/Core/Authentication/AuthView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "0D313CC7-C5B8-49C2-81C0-9108110820C3 - 171d953ea13f51e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in MCourses.AuthView.body.getter : some"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Celly/Meow/Celly/Core/Authentication/AuthView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "0D313CC7-C5B8-49C2-81C0-9108110820C3 - 362b9a68e01e4cde"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in MCourses.AuthView.body.getter : some"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Celly/Meow/Celly/Core/Authentication/AuthView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "0D313CC7-C5B8-49C2-81C0-9108110820C3 - bda622f569079ddb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in MCourses.AuthView.body.getter : some"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Celly/Meow/Celly/Core/Authentication/AuthView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "0D313CC7-C5B8-49C2-81C0-9108110820C3 - 6e9597508df3bbd8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in MCourses.AuthView.body.getter : some"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Celly/Meow/Celly/Core/Authentication/AuthView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76BF97E8-9A38-4E7F-9BDF-B1C2524A0939"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Celly/Meow/Celly/Authentication/GoogleSignInHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "signIn()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76BF97E8-9A38-4E7F-9BDF-B1C2524A0939 - 4e3953a3ce049f6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for MCourses.GoogleSignInHelper.signIn() async throws -&gt; MCourses.GoogleSignInResultModel"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Celly/Meow/Celly/Authentication/GoogleSignInHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "432">
+               </Location>
+               <Location
+                  uuid = "76BF97E8-9A38-4E7F-9BDF-B1C2524A0939 - dd870fc7685a2362"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for MCourses.GoogleSignInHelper.signIn() async throws -&gt; MCourses.GoogleSignInResultModel"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Celly/Meow/Celly/Authentication/GoogleSignInHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "948">
+               </Location>
+               <Location
+                  uuid = "76BF97E8-9A38-4E7F-9BDF-B1C2524A0939 - 372116e2c5300d9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for MCourses.GoogleSignInHelper.signIn() async throws -&gt; MCourses.GoogleSignInResultModel"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Celly/Meow/Celly/Authentication/GoogleSignInHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "76BF97E8-9A38-4E7F-9BDF-B1C2524A0939 - 4e3953a3ce049f6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for MCourses.GoogleSignInHelper.signIn() async throws -&gt; MCourses.GoogleSignInResultModel"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Celly/Meow/Celly/Authentication/GoogleSignInHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "76BF97E8-9A38-4E7F-9BDF-B1C2524A0939 - f2495d81103d6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for MCourses.GoogleSignInHelper.signIn() async throws -&gt; MCourses.GoogleSignInResultModel"
+                  moduleName = "MCourses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/finn/Celly/Meow/Celly/Authentication/GoogleSignInHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "33B06DAC-A3F7-410B-A7C7-E326C43481F3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MCourses/Core/SettingsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

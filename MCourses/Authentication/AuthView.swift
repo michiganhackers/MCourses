@@ -17,12 +17,6 @@ struct AuthView: View {
     
     var body: some View {
         VStack {
-            NavigationLink {
-                LoginEmailView(showSignInView: $showSignInView)
-            } label: {
-                Text("Sign in with Email")
-            }
-            
             GoogleSignInButton {
                 Task {
                     do {
@@ -33,9 +27,6 @@ struct AuthView: View {
                     }
                 }
             }.padding()
-            Button("Login with facebook") {
-                
-            }
         }
     }
 }

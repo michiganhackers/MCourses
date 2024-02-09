@@ -13,3 +13,4 @@ class CourseViewModel: ObservableObject {
         self.course = course
     }
 }
+

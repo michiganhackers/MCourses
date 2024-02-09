@@ -26,6 +26,7 @@ struct GoogleSignInResultModel {
 final class GoogleSignInHelper{
     @MainActor
     func signIn() async throws -> GoogleSignInResultModel {
+        
         guard let topVC = Utilities.shared.topViewController() else {
             // make real error
             throw URLError(.badURL)
