@@ -6,13 +6,12 @@ URLs include:
 """
 import flask
 import MCoursesFlaskApp
+import MCoursesFlaskApp.models as models
 import requests
 import json
 
+API_BASE_URL = 'https://gw.api.it.umich.edu/um/Curriculum/SOC'
 ACCESS_TOKEN = ""
-TERMS = []
-TERM_TO_SCHOOLS_DICT = {}
-SCHOOLS_TO_SUBJECTS_DICT = {}
 
 # flask --app MCoursesFlaskApp --debug run --host 0.0.0.0 --port 8000
 
@@ -38,105 +37,76 @@ def UM_API_set_access_token():
     return response
 
 
-def UM_API_get_terms():
-    global TERMS
-    if TERMS != []:
-        return TERMS
-
-    api_url = "https://gw.api.it.umich.edu/um/Curriculum/SOC/Terms"
-    headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
-    response = requests.get(api_url, headers=headers)
-
-    if response.status_code == 401:
-        UM_API_set_access_token()
-        print("Access token after set call:")
-        print(ACCESS_TOKEN)
-        response = requests.get(api_url, headers=headers)
-
-    response_dict = response.json()
-    print(response_dict)
-    TERMS = response_dict["getSOCTermsResponse"]["Term"]
-    return TERMS
-
-def UM_API_get_schools_for_term(term_code):
-    global TERM_TO_SCHOOLS_DICT
-    if TERM_TO_SCHOOLS_DICT.__contains__(term_code):
-        return TERM_TO_SCHOOLS_DICT[term_code]
-    
-    api_url = f"https://gw.api.it.umich.edu/um/Curriculum/SOC/Terms/{term_code}/Schools"
+def UM_API_get_url(path):
+    api_url = API_BASE_URL + path
     headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
     response = requests.get(api_url, headers=headers)
 
     if response.status_code == 401:
         UM_API_set_access_token()
         response = requests.get(api_url, headers=headers)
-
-
-    response_dict = response.json()
-    # TERM_TO_SCHOOLS_DICT[term_code] = 
 
     return response.json()
+
+
+def UM_API_get_terms():
+    path = "/Terms"
+    response_dict = UM_API_get_url(path)
+
+    return response_dict["getSOCTermsResponse"]["Term"]
+
+def UM_API_get_modeled_terms() -> models.Term:
+    path = "/Terms"
+    response_dict = UM_API_get_url(path)
+
+    return models.Term(response_dict["getSOCTermsResponse"]["Term"])
+
+def UM_API_get_schools_for_term(term_code):
+    path = f"/Terms/{term_code}/Schools"
+    response_dict = UM_API_get_url(path)
+
+    return response_dict["getSOCSchoolsResponse"]["School"]
+
+def UM_API_get_schools_for_term_modeled(term: models.Term) -> models.School:
+    path = f'/Terms/{term.get_code()}/Schools'
+    response_dict = UM_API_get_url(path)
+    return [models.School(school) for school in response_dict["getSOCSchoolsResponse"]["School"]]
 
 
 def UM_API_get_subjects_for_school(term_code, school_code):
-    if school_code in SCHOOLS_TO_SUBJECTS_DICT:
-        return SCHOOLS_TO_SUBJECTS_DICT[school_code]
+    path = f"/Terms/{term_code}/Schools/{school_code}/Subjects"
+    response_dict = UM_API_get_url(path)
 
-    api_url = f"https://gw.api.it.umich.edu/um/Curriculum/SOC/Terms/{term_code}/Schools/{school_code}/Subjects"
-    headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
-    response = requests.get(api_url, headers=headers)
-
-    if response.status_code == 401:
-        UM_API_set_access_token()
-        response = requests.get(api_url, headers=headers)
-
-
-    response_dict = response.json()
-    print(response_dict)
-
-    SCHOOLS_TO_SUBJECTS_DICT[school_code] = response_dict["getSOCSubjectsResponse"]["Subject"]
-
-    return response.json()
+    return response_dict["getSOCSubjectsResponse"]["Subject"]
 
 
 def UM_API_get_catalog_numbers_for_subj(term_code, school_code, subject_code):
-    api_url = f"https://gw.api.it.umich.edu/um/Curriculum/SOC/Terms/{term_code}/Schools/{school_code}/Subjects/{subject_code}/CatalogNbrs"
-    headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
-    response = requests.get(api_url, headers=headers)
+    path = f"/Terms/{term_code}/Schools/{school_code}/Subjects/{subject_code}/CatalogNbrs"
+    response_dict = UM_API_get_url(path)
 
-    if response.status_code == 401:
-        UM_API_set_access_token()
-        response = requests.get(api_url, headers=headers)
-
-    print(response.json())
-
-    return response.json()
+    return response_dict["getSOCCtlgNbrsResponse"]["ClassOffered"]
 
 
 def UM_API_get_description_for_catalog_number(term_code, school_code, subject_code, catalog_number):
-    api_url = f"https://gw.api.it.umich.edu/um/Curriculum/SOC/Terms/{term_code}/Schools/{school_code}/Subjects/{subject_code}/CatalogNbrs/{catalog_number}"
-    headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
-    response = requests.get(api_url, headers=headers)
+    path = f"/Terms/{term_code}/Schools/{school_code}/Subjects/{subject_code}/CatalogNbrs/{catalog_number}"
+    response_dict = UM_API_get_url(path)
 
-    if response.status_code == 401:
-        UM_API_set_access_token()
-        response = requests.get(api_url, headers=headers)
-
-    print(response.json())
-
-    return response.json()
+    return response_dict["getSOCCourseDescrResponse"]["CourseDescr"]
 
 
 def UM_API_get_sections_for_catalog_number(term_code, school_code, subject_code, catalog_number):
-    api_url = f"https://gw.api.it.umich.edu/um/Curriculum/SOC/Terms/{term_code}/Schools/{school_code}/Subjects/{subject_code}/CatalogNbrs/{catalog_number}/Sections"
-    headers = {"Authorization": f"Bearer {ACCESS_TOKEN}"}
-    response = requests.get(api_url, headers=headers)
+    path = f"/Terms/{term_code}/Schools/{school_code}/Subjects/{subject_code}/CatalogNbrs/{catalog_number}/Sections"
 
-    if response.status_code == 401:
-        UM_API_set_access_token()
-        response = requests.get(api_url, headers=headers)
+    response_dict = UM_API_get_url(path)
 
-    return response.json()
+    return response_dict["getSOCSectionsResponse"]["Section"]
+
+def UM_API_get_section_details(term_code, school_code, subject_code, catalog_number, section_number):
+    path = f"/Terms/{term_code}/Schools/{school_code}/Subjects/{subject_code}/CatalogNbrs/{catalog_number}/Sections/{section_number}"
+
+    response_dict = UM_API_get_url(path)
+
+    return response_dict["getSOCSectionDetailResponse"]
 
 
 @MCoursesFlaskApp.app.route('/', methods=["GET"])
@@ -158,6 +128,7 @@ def get_services():
         "catalog numbers": "/api/catalog_numbers/<term_code>/<school_code>/<subject_code>",
         "course description": "/api/catalog_numbers/<term_code>/<school_code>/<subject_code>/<catalog_number>/description",
         "section numbers": "/api/catalog_numbers/<term_code>/<school_code>/<subject_code>/<catalog_number>/sections",
+        "section details": "/api/section/<term_code>/<school_code>/<subject_code>/<catalog_number>/<section_number>",
     }
     return flask.jsonify(**context)
 
@@ -182,12 +153,7 @@ def get_courses():
 @MCoursesFlaskApp.app.route('/api/terms/', methods=["GET"])
 def get_terms():
     """Return a list of all terms."""
-    response_dict = [] # older value? Maybe if (cond): update
-    # I figured we may want to call this conditionally and think it's a nice abstraction anyway
-    if True:
-        response_dict = UM_API_get_terms()
-
-    print(TERMS)
+    response_dict = UM_API_get_terms()
 
     return flask.jsonify(response_dict)
 
@@ -204,30 +170,37 @@ def get_schools(term_code):
 
 @MCoursesFlaskApp.app.route('/api/subjects/<term_code>/<school_code>', methods=["GET"])
 def get_subjects(term_code: str, school_code: str):
-    subjects = UM_API_get_subjects_for_school(term_code, school_code)["getSOCSubjectsResponse"]["Subject"]
+    subjects = UM_API_get_subjects_for_school(term_code, school_code)
 
     return flask.jsonify(subjects)
 
 
 @MCoursesFlaskApp.app.route('/api/catalog_numbers/<term_code>/<school_code>/<subject_code>', methods=["GET"])
 def get_catalog_nums(term_code, school_code, subject_code):
-    catalog_nums = UM_API_get_catalog_numbers_for_subj(term_code, school_code, subject_code)["getSOCCtlgNbrsResponse"]["ClassOffered"]
+    catalog_nums = UM_API_get_catalog_numbers_for_subj(term_code, school_code, subject_code)
 
     return flask.jsonify(catalog_nums)
 
 
 @MCoursesFlaskApp.app.route('/api/catalog_numbers/<term_code>/<school_code>/<subject_code>/<catalog_number>/description', methods=["GET"])
 def get_course_desc_for_catalog_num(term_code, school_code, subject_code, catalog_number):
-    desc = UM_API_get_description_for_catalog_number(term_code, school_code, subject_code, catalog_number)["getSOCCourseDescrResponse"]["CourseDescr"]
+    desc = UM_API_get_description_for_catalog_number(term_code, school_code, subject_code, catalog_number)
 
     return flask.jsonify(desc)
 
 
 @MCoursesFlaskApp.app.route('/api/catalog_numbers/<term_code>/<school_code>/<subject_code>/<catalog_number>/sections', methods=["GET"])
 def get_course_sections_for_catalog_num(term_code, school_code, subject_code, catalog_number):
-    sections = UM_API_get_sections_for_catalog_number(term_code, school_code, subject_code, catalog_number)["getSOCSectionsResponse"]["Section"]
+    sections = UM_API_get_sections_for_catalog_number(term_code, school_code, subject_code, catalog_number)
 
     return flask.jsonify(sections)
+
+
+@MCoursesFlaskApp.app.route('/api/section/<term_code>/<school_code>/<subject_code>/<catalog_number>/<section_number>', methods=["GET"])
+def get_course_section_details(term_code, school_code, subject_code, catalog_number, section_number):
+    section = UM_API_get_section_details(term_code, school_code, subject_code, catalog_number, section_number)
+
+    return flask.jsonify(section)
 
 
 @MCoursesFlaskApp.app.route('/api/courses/<course_id>', methods=["GET"])
@@ -262,3 +235,14 @@ def test():
     response = UM_API_set_access_token()
 
     return flask.jsonify()
+
+
+@MCoursesFlaskApp.app.route('/api/debug_test_model')
+def debug_test_model():
+    terms = UM_API_get_modeled_terms()
+    schools = UM_API_get_schools_for_term_modeled(terms)
+
+    return flask.jsonify({
+        'term': terms.to_dict(),
+        'schools': [school.to_dict() for school in schools]
+    })
