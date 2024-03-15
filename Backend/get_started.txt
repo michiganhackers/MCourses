@@ -1,2 +1,0 @@
-First, activate the python virtual environment: source env/bin/activate
-Virtual environment tutorial: https://eecs485staff.github.io/p1-insta485-static/setup_virtual_env.html
