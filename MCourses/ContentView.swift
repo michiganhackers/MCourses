@@ -6,65 +6,89 @@
 //
 
 import SwiftUI
-import UIKit
-import WebKit
 
 struct ContentView: View {
+    @State private var launchScreenAppeared = false
+
     var body: some View {
         NavigationView {
-            VStack {
-                Image(systemName: "graduationcap")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .padding()
-                
-                Text("MCourses")
-                    .font(.largeTitle)
-                    .padding()
-                
-                NavigationLink(
-                    destination: WebView(url: URL(string: "https://weblogin.umich.edu")!),
-                    label: {
-                        Text("Login")
-                            .font(.title)
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+            ZStack {
+                Color(red: 0/255, green: 39/255, blue: 76/255)
+                    .edgesIgnoringSafeArea(.all)
+
+                VStack {
+                    Image("logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 100)
+                        .padding(.bottom, 2)
+
+                    Text("COURSES")
+                        .foregroundColor(.white)
+                        .font(.system(size: 40, weight: .bold))
+                        .padding(.top, 2)
+
+                    NavigationLink(destination: NewScreen(), isActive: $launchScreenAppeared) {
+                        EmptyView()
                     }
-                )
+                    .hidden() // Hide the navigation link, we're using it programmatically
+
+                }
+                .padding()
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        withAnimation {
+                            launchScreenAppeared = true
+                        }
+                    }
+                }
             }
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
 
-struct WebView: View {
-    let url: URL
-
+struct NewScreen: View {
+    @State private var isWebViewPresented = false
+    
     var body: some View {
-        SwiftUIWebView(url: url)
-            .navigationBarTitle("", displayMode: .inline)
-    }
-}
-
-struct SwiftUIWebView: UIViewRepresentable {
-    let url: URL
-
-    func makeUIView(context: Context) -> UIView {
-        let webView = WKWebView()
-        return webView
-    }
-
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        if let uiWebView = uiView as? WKWebView {
-            let request = URLRequest(url: url)
-            uiWebView.load(request)
+        VStack {
+            Text("Welcome to")
+                .font(.system(size: 30, weight: .bold))
+                .foregroundColor(Color(red: 19/255, green: 21/255, blue: 22/255)) // HEX: 131516
+                .padding(.bottom, 0) // brings words closer together
+                .padding(.leading, -135) // shift left the more negative
+            Text("M-COURSES")
+                .font(.system(size: 40, weight: .bold))
+                .foregroundColor(Color(red: 255/255, green: 203/255, blue: 5/255)) // HEX: FFCB05
+                .padding(.leading, -60) // shift left
+            Text("Continue with your university email.")
+                .font(.system(size:12))
+                .padding(.top, 1)
+                .padding(.leading, -100)
+            
+            Button(action: {
+                // Open the web URL when the button is clicked
+                if let url = URL(string: "https://weblogin.umich.edu/") {
+                    UIApplication.shared.open(url)
+                }
+                
+            }) 
+            {
+                Text("Login")
+                    .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .cornerRadius(10)
+                            .frame(width: 300, height: 50) // Adjust the height to be longer
+            }
+            .background(Color(red: 0/255, green: 39/255, blue: 76/255)) // HEX: 00274C
+            .padding(.top, 20)
         }
+        .frame(width: 300, height: 30)
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }
