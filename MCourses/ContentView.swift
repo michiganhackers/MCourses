@@ -82,6 +82,7 @@ struct NewScreen: View {
                             .padding()
                             .cornerRadius(10)
                             .frame(width: 300, height: 50) // Adjust the height to be longer
+                // hi
             }
             .background(Color(red: 0/255, green: 39/255, blue: 76/255)) // HEX: 00274C
             .padding(.top, 20)
