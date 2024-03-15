@@ -1,7 +1,7 @@
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
+Backend/MCoursesFlaskApp/secrets.py
 secrets.txt
 
 ## User settings
@@ -171,11 +171,8 @@ files_for_autograder_io/
 # Google Drive and Dropbox
 Icon
 .dropbox*
-<<<<<<< HEAD
 
 lib/
 
 pyvenv.cfg
 
-=======
->>>>>>> beba3a96734c6249af498e021850dc8749225286

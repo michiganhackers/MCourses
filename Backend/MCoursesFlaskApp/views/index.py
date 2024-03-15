@@ -7,6 +7,7 @@ URLs include:
 import flask
 import MCoursesFlaskApp
 import MCoursesFlaskApp.models as models
+from MCoursesFlaskApp.secrets import CLIENT_KEY, CLIENT_SECRET
 import requests
 import json
 
@@ -21,8 +22,8 @@ def UM_API_set_access_token():
     headers = {"content-type": "application/x-www-form-urlencoded"}
     data = {
         'grant_type': 'client_credentials',
-        'client_id': '',  # CLIENT_KEY
-        'client_secret': '',  # CLIENT_SECRET
+        'client_id': CLIENT_KEY,  # CLIENT_KEY
+        'client_secret': CLIENT_SECRET,  # CLIENT_SECRET
         'scope': 'umscheduleofclasses'  # umscheduleofclasses
     }
 
@@ -59,7 +60,7 @@ def UM_API_get_modeled_terms() -> models.Term:
     path = "/Terms"
     response_dict = UM_API_get_url(path)
 
-    return models.Term(response_dict["getSOCTermsResponse"]["Term"])
+    return [models.Term(term) for term in response_dict["getSOCTermsResponse"]["Term"]]
 
 def UM_API_get_schools_for_term(term_code):
     path = f"/Terms/{term_code}/Schools"
@@ -70,6 +71,7 @@ def UM_API_get_schools_for_term(term_code):
 def UM_API_get_schools_for_term_modeled(term: models.Term) -> models.School:
     path = f'/Terms/{term.get_code()}/Schools'
     response_dict = UM_API_get_url(path)
+
     return [models.School(school) for school in response_dict["getSOCSchoolsResponse"]["School"]]
 
 
@@ -240,9 +242,9 @@ def test():
 @MCoursesFlaskApp.app.route('/api/debug_test_model')
 def debug_test_model():
     terms = UM_API_get_modeled_terms()
-    schools = UM_API_get_schools_for_term_modeled(terms)
+    schools = [UM_API_get_schools_for_term_modeled(term) for term in terms]
 
     return flask.jsonify({
-        'term': terms.to_dict(),
-        'schools': [school.to_dict() for school in schools]
+        'term': [term.to_dict() for term in terms],
+        'schools': [[school.to_dict() for school in all_schools] for all_schools in schools]
     })
