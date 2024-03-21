@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B605DD8A2BACFB2000508F73 /* MakeReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3D2642B06FBDE007785A8 /* MakeReviewView.swift */; };
 		B607A85F2AF476F90010D6DF /* CourseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607A85E2AF476F90010D6DF /* CourseItemView.swift */; };
 		B607A8612AF477EF0010D6DF /* CourseItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607A8602AF477EF0010D6DF /* CourseItemViewModel.swift */; };
 		B607A8632AF479000010D6DF /* CourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607A8622AF479000010D6DF /* CourseItem.swift */; };
@@ -63,10 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AEF3D2642B06FBDE007785A8 /* MakeReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeReviewView.swift; sourceTree = "<group>"; };
 		B607A85E2AF476F90010D6DF /* CourseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItemView.swift; sourceTree = "<group>"; };
 		B607A8602AF477EF0010D6DF /* CourseItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItemViewModel.swift; sourceTree = "<group>"; };
 		B607A8622AF479000010D6DF /* CourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItem.swift; sourceTree = "<group>"; };
-		AEF3D2642B06FBDE007785A8 /* MakeReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeReviewView.swift; sourceTree = "<group>"; };
 		B63244EA2AEB1A4B003C3C3D /* MCourses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCourses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63244ED2AEB1A4B003C3C3D /* MCoursesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCoursesApp.swift; sourceTree = "<group>"; };
 		B63244F12AEB1A4C003C3C3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,7 +165,6 @@
 				B633CA772B6418BE00FE1417 /* Utilities */,
 				B633CA722B64186B00FE1417 /* Firestore */,
 				B63244F32AEB1A4C003C3C3D /* Preview Content */,
-				AEF3D2642B06FBDE007785A8 /* MakeReviewView.swift */,
 			);
 			path = MCourses;
 			sourceTree = "<group>";
@@ -226,6 +226,7 @@
 				B6A080CF2B1962D00051F87A /* Course.swift */,
 				B6A080D12B1963430051F87A /* Review.swift */,
 				B633CA7B2B64196C00FE1417 /* RootView.swift */,
+				AEF3D2642B06FBDE007785A8 /* MakeReviewView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -402,6 +403,7 @@
 				B69A521B2B75B4D4004DB5D2 /* StorageManager.swift in Sources */,
 				B633CA762B64186B00FE1417 /* UserManager.swift in Sources */,
 				B6A080D22B1963430051F87A /* Review.swift in Sources */,
+				B605DD8A2BACFB2000508F73 /* MakeReviewView.swift in Sources */,
 				B607A8632AF479000010D6DF /* CourseItem.swift in Sources */,
 				B69A52132B75B429004DB5D2 /* SettingsView.swift in Sources */,
 				B633CA892B64242E00FE1417 /* AuthViewModel.swift in Sources */,
@@ -415,8 +417,6 @@
 				B633CA7C2B64196C00FE1417 /* RootView.swift in Sources */,
 				B6A080D42B19662D0051F87A /* CourseViewModel.swift in Sources */,
 				B607A85F2AF476F90010D6DF /* CourseItemView.swift in Sources */,
-				AEF3D2652B06FBDE007785A8 /* MakeReviewView.swift in Sources */,
-				B63244F02AEB1A4B003C3C3D /* ContentView.swift in Sources */,
 				B63244EE2AEB1A4B003C3C3D /* MCoursesApp.swift in Sources */,
 				B69A52142B75B429004DB5D2 /* SettingsViewModel.swift in Sources */,
 			);
