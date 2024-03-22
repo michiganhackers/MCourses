@@ -12,7 +12,7 @@ import requests
 import json
 
 API_BASE_URL = 'https://gw.api.it.umich.edu/um/Curriculum/SOC'
-ACCESS_TOKEN = ""
+ACCESS_TOKEN = "M1UX9tjcvgs2KBDYF5lFKuzZlSiO"
 
 # flask --app MCoursesFlaskApp --debug run --host 0.0.0.0 --port 8000
 
@@ -31,7 +31,7 @@ def UM_API_set_access_token():
     response_dict = response.json()
 
     global ACCESS_TOKEN 
-    ACCESS_TOKEN = response_dict["access_token"]
+    ACCESS_TOKEN = str(response_dict["access_token"])
     print(ACCESS_TOKEN)
 
     print(response.json())
