@@ -1,6 +1,6 @@
 //
 //  GoogleSignInHelper.swift
-//  MCourses
+//  Celly
 //
 //  Created by Finn on 7/29/23.
 //
@@ -8,6 +8,8 @@
 import Foundation
 import GoogleSignIn
 import GoogleSignInSwift
+import FirebaseAuth
+import FirebaseCore
 
 struct GoogleSignInModel {
     let idToken: String
@@ -26,11 +28,17 @@ struct GoogleSignInResultModel {
 final class GoogleSignInHelper{
     @MainActor
     func signIn() async throws -> GoogleSignInResultModel {
-        
         guard let topVC = Utilities.shared.topViewController() else {
             // make real error
             throw URLError(.badURL)
         }
+        guard let clientID = FirebaseApp.app()?.options.clientID else { throw URLError(.badURL)}
+        
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        
+        print(GIDSignIn.sharedInstance)
+        
         let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
         
         guard let idToken = gidSignInResult.user.idToken?.tokenString else {

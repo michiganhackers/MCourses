@@ -1,6 +1,6 @@
 //
 //  LoginView.swift
-//  MCourses
+//  Celly
 //
 //  Created by Finn on 7/26/23.
 //
@@ -12,11 +12,13 @@ import GoogleSignInSwift
 struct AuthView: View {
     @StateObject private var viewModel = AuthViewModel()
     @Binding var showSignInView: Bool
-    
-    
-    
+        
     var body: some View {
         VStack {
+            Image(systemName: "graduationcap")
+                            .imageScale(.large)
+                            .foregroundStyle(.tint)
+            Text("MCourses")
             GoogleSignInButton {
                 Task {
                     do {
