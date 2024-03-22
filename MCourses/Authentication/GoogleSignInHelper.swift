@@ -1,6 +1,6 @@
 //
 //  GoogleSignInHelper.swift
-//  Celly
+//  MCourses
 //
 //  Created by Finn on 7/29/23.
 //

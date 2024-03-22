@@ -1,6 +1,6 @@
 //
 //  LoginView.swift
-//  Celly
+//  MCourses
 //
 //  Created by Finn on 7/26/23.
 //

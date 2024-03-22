@@ -1,6 +1,6 @@
 //
 //  UserManager.swift
-//  Celly
+//  MCourses
 //
 //  Created by Finn on 8/9/23.
 //
