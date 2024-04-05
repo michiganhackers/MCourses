@@ -1,5 +1,8 @@
 import sys
-import requests
+import json
+import firebase_admin
+from firebase_admin import db
+from firebase_admin import credentials
 from MCoursesFlaskApp.views import index
 
 def get_term_descriptions() -> dict:
@@ -28,7 +31,7 @@ def get_credits(term, school, subject, catalog_num):
         return sections[0]["CreditHours"]
     else:
         return sections["CreditHours"]
-   
+
 
 def get_description(term, school, subject, catalog_num):
     descriptions = index.UM_API_get_description_for_catalog_number(term, school, subject, catalog_num)
@@ -37,11 +40,40 @@ def get_description(term, school, subject, catalog_num):
 def get_long_name(term, school, subject, catalog_num) :
     descriptions = get_description(term, school, subject, catalog_num)
 
-    return descriptions.partition("---")[0]
+    return descriptions.partition(" --- ")[0]
 
+def create_entry(term, school, subject, catalog):
+    name = get_long_name(term, school, subject, catalog)
+    description = get_description(term, school, subject, catalog)
+    credits = get_credits(term, school, subject, catalog)
+    
+    courseDict = {
+        "name": name, # Video game development
+        "description": description,
+        "credits": credits,
+        "school": school, # ENG
+        "subject": subject, # EECS
+        "catalog_number": catalog # 494
+        #"instructor": 'test'
+    }
+
+    return courseDict
 
 
 def main():
+    # TODO
+    # Fetch the service account key JSON file contents
+    # cred = credentials.Certificate('path/to/serviceAccountKey.json')
+
+    # TODO
+    # Initialize the app with a service account, granting admin privileges
+    # firebase_admin.initialize_app(cred, {
+    #     'databaseURL': 'https://databaseName.firebaseio.com'
+    # })
+
+    printMode = True
+    # ref = db.reference("/")
+
     index.UM_API_set_access_token()
     term = "2470"
 
@@ -60,12 +92,16 @@ def main():
             catalog_nums = get_catalog_nums(term, school, subject)
 
             for catalog in catalog_nums:
-                name = get_long_name(term, school, subject, catalog)
-                description = get_description(term, school, subject, catalog)
-                credits = get_credits(term, school, subject, catalog)
-                print(name)
-                print(description)
-                print(credits)
+                courseDict = create_entry(term, school, subject, catalog)
+
+                if printMode:
+                    print()
+                    for key, val in courseDict.items():
+                        print(f"{key}: {val}")
+                    print()
+                else:
+                    jsonObj = json.dumps(courseDict)
+                    ref.set(jsonObj)
 
 
 
