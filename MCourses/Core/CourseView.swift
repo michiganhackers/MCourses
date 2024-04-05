@@ -21,8 +21,9 @@ struct CourseView: View {
     var body: some View {
         VStack() {
             header
-            reviewPage
+            reviewView
         }
+        .ignoresSafeArea()
     }
     
     var header: some View {
@@ -36,7 +37,6 @@ struct CourseView: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
             }
-            .ignoresSafeArea()
             HStack(spacing: 20, content: {
                 Text("\(courseViewModel.course.department) \(courseViewModel.course.number)")
                     .fontWeight(.medium)
@@ -54,34 +54,90 @@ struct CourseView: View {
         }
     }
     
-    var reviewPage: some View {
+    var reviewView: some View {
         VStack(alignment: .leading) {
             Text("Reviews")
                 .font(.largeTitle)
                 .bold()
             ScrollView (){
                 ForEach(courseViewModel.course.reviews) { review in
-                    VStack (spacing: 30){
-                        HStack (){
-                            Text("\(review.semester)")
-                            Spacer()
-                            Text("\(review.professor)")
-                            Spacer()
-                            Text("\(review.rating)")
-                        }
-                        .bold()
-                        
-                        Text("\(review.review)")
-                        
-                    }
+                    ReviewRow(review: review)
                 }
             }
-            .background(Color.gray.brightness(0.40))
         }
-//        .padding(0)
-//        .frame(maxWidth: .infinity)
+        .padding(10)
     }
 }
+
+struct ReviewRow: View {
+    let review: Review
+    
+    var body: some View{
+        VStack (spacing: 30){
+            HStack() {
+                Text("\(review.semester)")
+                Spacer()
+                Text("\(review.professor)")
+                Spacer()
+                Text("\(review.rating)")
+            }
+            .bold()
+            
+            Text("\(review.review)")
+            
+            HStack(alignment: .lastTextBaseline) {
+                VStack() {
+                    Text("Workload: \(Int(review.workload))%")
+                    Text("Worth it: \(Int(review.worth))%")
+                    Text("Enjoyment: \(Int(review.enjoyment))%")
+                }
+                .bold()
+                Spacer()
+                UpVotes(count: 1)
+            }
+        }
+        .padding(.vertical, 10)
+        .background(Color.gray.brightness(0.4))
+        .padding(.bottom, 5) // margin
+    }
+}
+
+
+// TODO: retrieve count from database
+struct UpVotes: View {
+    @State var count:Int
+    
+    var body: some View {
+        ZStack {
+            ZStack() {
+                Rectangle()
+                .foregroundColor(.clear)
+                .frame(width: 70, height: 30)
+                .background(Color(red: 0, green: 0.15, blue: 0.3))
+                .cornerRadius(20)
+                
+                HStack(){
+                    Image(systemName: "arrow.up")
+                        .onTapGesture{
+                            count += 1 // TODO: make sure user can only vote once
+                        }
+                    
+                    Text("\(count)")
+                    
+                    Image(systemName: "arrow.down")
+                        .onTapGesture{
+                            count -= 1
+                        }
+                        .foregroundColor(.yellow)
+                        .disabled(count <= 0)
+                }
+                .foregroundColor(.white)
+            }
+        }
+    }
+}
+
+
 
 // -------- Temporary Variables for Testing ---------
 
@@ -103,7 +159,7 @@ let sampleReview2 = Review(
     course: "Data Structures and Algorithms",
     semester: "Fall 2023",
     professor: "Emily Graetz",
-    review: "Hello World",
+    review: "Enrolling in this course was a transformative experience that exceeded my expectations. The curriculum was well-structured, offering a comprehensive overview of the subject matter while delving deep into key concepts. The instructors demonstrated exceptional expertise, providing clear explanations and real-world applications that enhanced my understanding.",
     rating: 8,
     workload: 50,
     worth: 20,
