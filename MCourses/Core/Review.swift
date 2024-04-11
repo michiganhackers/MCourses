@@ -10,7 +10,7 @@ import Foundation
 struct Review: Identifiable, Decodable {
     var id: String?
     //let uid: String
-    let course: Course
+    let course: String
     let semester: String
     let professor: String
     let review: String
@@ -18,4 +18,5 @@ struct Review: Identifiable, Decodable {
     let workload: Double
     let worth: Double
     let enjoyment: Double
+    let upvote: Int
 }
