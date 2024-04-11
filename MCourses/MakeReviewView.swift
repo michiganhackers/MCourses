@@ -72,7 +72,7 @@ struct MakeReviewView: View {
             }
             ScrollView {
                 VStack {
-                    FormTextItem(label: "Term taken", example: "WN 2024", text: $term)
+                    FormSelectItem(label: "Term taken", example: "WN 2024", text: $term, selectionArray: ["Cranberry", "Grape", "Banana", "Strawberry"])
                     FormTextItem(label: "Professor taken with", example: "Jonathon Beaumont", text: $professor)
                     FormTextItem(label: "Rating", example: "Scale of 1-10", text: $rating)
                     FormTextItem(label: "Workload", example: "Scale of 0-100%", text: $workload)
@@ -96,6 +96,56 @@ struct MakeReviewView: View {
             }
             .padding(16)
         }
+    }
+}
+
+struct FormSelectItem: View {
+    var label: String
+    var example: String
+    @Binding var text: String
+    var selectionArray: Array<String>
+    @State private var toggled: Bool = false
+    @State private var selected: String = ""
+    
+    var body: some View {
+        HStack {
+            Text(label)
+                .font(Font.custom("SF Pro Text", size: 11))
+                .kerning(0.066)
+                .foregroundColor(.black)
+            Spacer()
+        }
+        HStack {
+            Button {
+                // TODO: insert action here
+                self.toggled = true
+            } label: {
+                if (!toggled) {
+                    // TODO: if $text has some value, show that instead
+                    Text(example)
+                        .font(Font.custom("SF Pro Text", size: 11))
+                        .kerning(0.066)
+                        .foregroundColor(Color(red: 0.6, green: 0.61, blue: 0.59))
+                    Spacer()
+                    // TODO: show dropdown icon
+                } else {
+                    VStack {
+                        // TODO: show picker
+                        
+                        HStack {
+                            Spacer()
+                            // TODO: show dropUP icon
+                        }
+                    }
+                    .padding(1)
+                }
+            }
+            .padding(1)
+        }
+        Rectangle()
+            .fill(Color.black)
+            .frame(height: 1)
+            .padding(.bottom, 10)
     }
 }
 
