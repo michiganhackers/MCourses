@@ -11,6 +11,7 @@
 		4444C1EB2BB633BC0082AEBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444C1EA2BB633BC0082AEBC /* ContentView.swift */; };
 		4444C1ED2BB633C20082AEBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4444C1EC2BB633C20082AEBC /* Assets.xcassets */; };
 		4444C1F02BB633C20082AEBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4444C1EF2BB633C20082AEBC /* Preview Assets.xcassets */; };
+		44A2DE3B2BBF6F3F001189CE /* ClassesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A2DE3A2BBF6F3F001189CE /* ClassesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		4444C1EA2BB633BC0082AEBC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4444C1EC2BB633C20082AEBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4444C1EF2BB633C20082AEBC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		44A2DE3A2BBF6F3F001189CE /* ClassesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				4444C1E82BB633BC0082AEBC /* MCourses2App.swift */,
 				4444C1EA2BB633BC0082AEBC /* ContentView.swift */,
+				44A2DE3A2BBF6F3F001189CE /* ClassesListView.swift */,
 				4444C1EC2BB633C20082AEBC /* Assets.xcassets */,
 				4444C1EE2BB633C20082AEBC /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4444C1EB2BB633BC0082AEBC /* ContentView.swift in Sources */,
+				44A2DE3B2BBF6F3F001189CE /* ClassesListView.swift in Sources */,
 				4444C1E92BB633BC0082AEBC /* MCourses2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
