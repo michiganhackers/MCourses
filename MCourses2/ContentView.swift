@@ -30,10 +30,11 @@ struct ContentView: View {
                  Text("Hello, world!")
                  */
                 // Spacer()
-                Text("Filter").font(.title).bold().padding(.top, 30)
+                Text("Filter Your Search").font(.title).bold().padding(.top, 30)
                 Spacer()
                 Text("Sort by").multilineTextAlignment(.leading).font(.headline)
                 Menu {
+                    
                     Button(action: {}, label: {Text("Rating 📊")}) // chart.bar.xaxis
                     Button(action: {}, label: {Text("Workload 📝")})
                     Button(action: {}, label: {Text("Name 🗣️")})
@@ -53,7 +54,8 @@ struct ContentView: View {
                 // NavigationView(){
                 NavigationLink() {
                     // print("Search2 clicked")
-                    ClassesListView()
+                    //ClassesListView()
+                    SwiftUIView()
                 } label: {
                     Text("Search")
                         .padding(20).foregroundColor(.white)

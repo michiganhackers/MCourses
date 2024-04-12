@@ -11,6 +11,11 @@
 		4444C1EB2BB633BC0082AEBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444C1EA2BB633BC0082AEBC /* ContentView.swift */; };
 		4444C1ED2BB633C20082AEBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4444C1EC2BB633C20082AEBC /* Assets.xcassets */; };
 		4444C1F02BB633C20082AEBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4444C1EF2BB633C20082AEBC /* Preview Assets.xcassets */; };
+		44783EB02BC8AC1A00DD60BA /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44783EAF2BC8AC1A00DD60BA /* SwiftUIView.swift */; };
+		44783EB22BC8AE2700DD60BA /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44783EB12BC8AE2700DD60BA /* ClassView.swift */; };
+		44783EB42BC8AE3600DD60BA /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44783EB32BC8AE3600DD60BA /* Course.swift */; };
+		44783EB82BC8AE7000DD60BA /* SwiftUIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44783EB72BC8AE7000DD60BA /* SwiftUIView2.swift */; };
+		44783EBA2BC8B50F00DD60BA /* FilterAndSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44783EB92BC8B50F00DD60BA /* FilterAndSearchView.swift */; };
 		44A2DE3B2BBF6F3F001189CE /* ClassesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A2DE3A2BBF6F3F001189CE /* ClassesListView.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +25,11 @@
 		4444C1EA2BB633BC0082AEBC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4444C1EC2BB633C20082AEBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4444C1EF2BB633C20082AEBC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		44783EAF2BC8AC1A00DD60BA /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		44783EB12BC8AE2700DD60BA /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
+		44783EB32BC8AE3600DD60BA /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		44783EB72BC8AE7000DD60BA /* SwiftUIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView2.swift; sourceTree = "<group>"; };
+		44783EB92BC8B50F00DD60BA /* FilterAndSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterAndSearchView.swift; sourceTree = "<group>"; };
 		44A2DE3A2BBF6F3F001189CE /* ClassesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,10 +64,15 @@
 			isa = PBXGroup;
 			children = (
 				4444C1E82BB633BC0082AEBC /* MCourses2App.swift */,
+				44783EB92BC8B50F00DD60BA /* FilterAndSearchView.swift */,
 				4444C1EA2BB633BC0082AEBC /* ContentView.swift */,
 				44A2DE3A2BBF6F3F001189CE /* ClassesListView.swift */,
 				4444C1EC2BB633C20082AEBC /* Assets.xcassets */,
 				4444C1EE2BB633C20082AEBC /* Preview Content */,
+				44783EAF2BC8AC1A00DD60BA /* SwiftUIView.swift */,
+				44783EB12BC8AE2700DD60BA /* ClassView.swift */,
+				44783EB32BC8AE3600DD60BA /* Course.swift */,
+				44783EB72BC8AE7000DD60BA /* SwiftUIView2.swift */,
 			);
 			path = MCourses2;
 			sourceTree = "<group>";
@@ -140,8 +155,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44783EB42BC8AE3600DD60BA /* Course.swift in Sources */,
 				4444C1EB2BB633BC0082AEBC /* ContentView.swift in Sources */,
+				44783EB22BC8AE2700DD60BA /* ClassView.swift in Sources */,
 				44A2DE3B2BBF6F3F001189CE /* ClassesListView.swift in Sources */,
+				44783EB82BC8AE7000DD60BA /* SwiftUIView2.swift in Sources */,
+				44783EB02BC8AC1A00DD60BA /* SwiftUIView.swift in Sources */,
+				44783EBA2BC8B50F00DD60BA /* FilterAndSearchView.swift in Sources */,
 				4444C1E92BB633BC0082AEBC /* MCourses2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
