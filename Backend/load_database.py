@@ -6,22 +6,66 @@ from MCoursesFlaskApp.views import index
 from MCoursesFlaskApp.secrets import DATABASE_URL
 
 def get_term_descriptions() -> dict:
-    term_descriptions = [term_dict["TermDescr"] for term_dict in index.UM_API_get_terms()]
+    term_descriptions = []
+    term_dicts = index.UM_API_get_terms()
+
+    for term_dict in term_dicts:
+        if isinstance(term_dict, dict):
+            if "TermDescr" in term_dict:
+                term_descriptions.append(term_dict["TermDescr"])
+            else:
+                print("Missing key 'TermDescr' in dictionary:", term_dict)
+        else:
+            print("Non-dictionary item encountered in term description:", term_dict)
+        
     return term_descriptions
     
 
 def get_schools(term) -> dict:
-    schools = [school_dict["SchoolCode"] for school_dict in index.UM_API_get_schools_for_term(term)]
+    schools = []
+    school_dicts = index.UM_API_get_schools_for_term(term)
+
+    for school_dict in school_dicts:
+        if isinstance(school_dict, dict):
+            if "SchoolCode" in school_dict:
+                schools.append(school_dict["SchoolCode"])
+            else:
+                print("Missing key 'SchoolCode' in dictionary:", school_dict)
+        else:
+            print("Non-dictionary item encountered in school:", school_dict)
+        
     return schools
 
 
 def get_subjects(term, school) -> dict:
-    subjects = [subject_dict["SubjectCode"] for subject_dict in index.UM_API_get_subjects_for_school(term, school)]
+    subjects = []
+    subject_dicts = index.UM_API_get_subjects_for_school(term, school)
+
+    for subject_dict in subject_dicts:
+        if isinstance(subject_dict, dict):
+            if "SubjectCode" in subject_dict:
+                subjects.append(subject_dict["SubjectCode"])
+            else:
+                print("Missing key 'SubjectCode' in dictionary:", subject_dict)
+        else:
+            print("Non-dictionary item encountered in subject:", subject_dict)
+        
     return subjects
 
 
 def get_catalog_nums(term, school, subject) -> dict:
-    catalog_nums = [catalog_dict["CatalogNumber"] for catalog_dict in index.UM_API_get_catalog_numbers_for_subj(term, school, subject) if "CatalogNumber" in catalog_dict]
+    catalog_nums = []
+    catalog_dicts = index.UM_API_get_catalog_numbers_for_subj(term, school, subject)
+
+    for catalog_dict in catalog_dicts:
+        if isinstance(catalog_dict, dict):
+            if "CatalogNumber" in catalog_dict:
+                catalog_nums.append(catalog_dict["CatalogNumber"])
+            else:
+                print("Missing key 'CatalogNumber' in dictionary:", catalog_dict)
+        else:
+            print("Non-dictionary item encountered in catalog:", catalog_dict)
+
     return catalog_nums
 
 
