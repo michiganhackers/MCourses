@@ -15,5 +15,7 @@ struct CourseItem: Identifiable, Decodable {
     let credits: Int
     let description: String
     let avgRating: Double
-    let avgDifficulty: Double
+    let avgWorkload: Double
+    let avgWorth: Double
+    let avgEnjoyment: Double
 }

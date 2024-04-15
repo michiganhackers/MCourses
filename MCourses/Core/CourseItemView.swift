@@ -7,11 +7,19 @@
 
 import SwiftUI
 
+protocol FetchCourses {
+    func fetchCourses()
+}
+
 struct CourseItemView: View {
     @ObservedObject var courseItemViewModel: CourseItemViewModel
     
     init(courseItem: CourseItem) {
         self.courseItemViewModel = CourseItemViewModel(courseItem: courseItem)
+    }
+    
+    init(course: Course) {
+        self.courseItemViewModel = CourseItemViewModel(courseItem: CourseItem(name: course.name, department: course.department, number: course.number, credits: course.credits, description: course.description, avgRating: course.avgRating, avgWorkload: course.avgWorkload, avgWorth: course.avgWorth, avgEnjoyment: course.avgEnjoyment))
     }
     
     var body: some View {
@@ -37,5 +45,7 @@ struct CourseItemView: View {
         credits: 4,
         description: "Introduction to the algorithm analysis and O-notation; Fundamental data structures including lists, stacks, queues, priority queues, hash tables, binary trees, search trees, balanced, trees, and graphs; searching and sorting algorithms; recursive algorithms; basic graph algorithms; introduction to greedy algorithms and divide and conquer strategy. Several programming assignments.",
         avgRating: 4.5,
-        avgDifficulty: 0.68))
+        avgWorkload: 0.68,
+        avgWorth: 10,
+        avgEnjoyment: 10))
 }
