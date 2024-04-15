@@ -45,27 +45,5 @@ final class UserManager {
         ]
         try await userDocument(userId: userId).updateData(data)
     }
-    
-//    func addPost(userId: String, post: Post) async throws {
-//        let data: [String:Any] = [
-//            Post.CodingKeys.postId.rawValue : post.postId,
-//            Post.CodingKeys.ownerUID.rawValue : post.ownerUID,
-//            Post.CodingKeys.caption.rawValue : post.caption,
-//            //Post.CodingKeys.cellies.rawValue : post.cellies,
-//            //Post.CodingKeys.postImageURL.rawValue : post.postImageURL,
-//            Post.CodingKeys.datePosted.rawValue : post.datePosted,
-//            Post.CodingKeys.dateCompleted.rawValue : post.dateCompleted
-//        ]
-//        try await userDocument(userId: userId).collection("posts").document(post.postId).setData(data) { err in
-//            if let err = err {
-//                print("Error writing document: \(err)")
-//            } else {
-//                print("Post successfully written!")
-//            }
-//        }
-//    }
-//    
-//    func removePost(userId: String, post: Post) async throws {
-//        try await userDocument(userId: userId).collection("posts").document(post.postId).delete()
-//    }
+
 }

@@ -253,7 +253,7 @@ let sampleReview1 = Review(
     workload: 58,
     worth: 40,
     enjoyment: 61,
-    upvote: 6
+    votes: 6
 )
 
 let sampleReview2 = Review(
@@ -266,7 +266,7 @@ let sampleReview2 = Review(
     workload: 50,
     worth: 20,
     enjoyment: 100,
-    upvote: 10
+    votes: 10
 )
 
 let sampleCourse = Course(
