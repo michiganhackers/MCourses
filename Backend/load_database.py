@@ -97,7 +97,12 @@ def create_entry(term, school, subject, catalog):
         "credits": credits,
         "school": school, # ENG
         "subject": subject, # EECS
-        "catalog_number": catalog # 494
+        "catalog_number": catalog, # 494
+        "avg_rating": -1.0, 
+        "avg_workload": -1.0,
+        "avg_worth": -1.0,
+        "avg_enjoyment": -1.0,
+        "num_reviews": 0
         #"instructor": 'test'
     }
 
