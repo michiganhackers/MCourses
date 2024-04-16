@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACADA9392BCEC558008A621C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADA9382BCEC558008A621C /* SearchView.swift */; };
+		ACADA93D2BCEC8BA008A621C /* SearchCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADA93C2BCEC8BA008A621C /* SearchCourse.swift */; };
+		ACADA93F2BCECA52008A621C /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADA93E2BCECA52008A621C /* FilterView.swift */; };
 		B605DD8A2BACFB2000508F73 /* MakeReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF3D2642B06FBDE007785A8 /* MakeReviewView.swift */; };
 		B607A85F2AF476F90010D6DF /* CourseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607A85E2AF476F90010D6DF /* CourseItemView.swift */; };
 		B607A8612AF477EF0010D6DF /* CourseItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B607A8602AF477EF0010D6DF /* CourseItemViewModel.swift */; };
@@ -66,6 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ACADA9382BCEC558008A621C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		ACADA93C2BCEC8BA008A621C /* SearchCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCourse.swift; sourceTree = "<group>"; };
+		ACADA93E2BCECA52008A621C /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		AEF3D2642B06FBDE007785A8 /* MakeReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeReviewView.swift; sourceTree = "<group>"; };
 		B607A85E2AF476F90010D6DF /* CourseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItemView.swift; sourceTree = "<group>"; };
 		B607A8602AF477EF0010D6DF /* CourseItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItemViewModel.swift; sourceTree = "<group>"; };
@@ -220,7 +226,10 @@
 			children = (
 				B69A52162B75B456004DB5D2 /* ProfileView.swift */,
 				B69A52152B75B456004DB5D2 /* ProfileViewModel.swift */,
+				ACADA93E2BCECA52008A621C /* FilterView.swift */,
 				B69A52112B75B429004DB5D2 /* SettingsView.swift */,
+				ACADA9382BCEC558008A621C /* SearchView.swift */,
+				ACADA93C2BCEC8BA008A621C /* SearchCourse.swift */,
 				B69A52122B75B429004DB5D2 /* SettingsViewModel.swift */,
 				B607A85E2AF476F90010D6DF /* CourseItemView.swift */,
 				B607A8602AF477EF0010D6DF /* CourseItemViewModel.swift */,
@@ -406,6 +415,7 @@
 				B63140462BCB657A0075EBD2 /* ReviewService.swift in Sources */,
 				B685E2692BACFFC400CDE152 /* GoogleSignInHelper.swift in Sources */,
 				B69A52172B75B456004DB5D2 /* ProfileViewModel.swift in Sources */,
+				ACADA93F2BCECA52008A621C /* FilterView.swift in Sources */,
 				B6A080D02B1962D00051F87A /* Course.swift in Sources */,
 				B69A521B2B75B4D4004DB5D2 /* StorageManager.swift in Sources */,
 				B633CA762B64186B00FE1417 /* UserManager.swift in Sources */,
@@ -417,8 +427,10 @@
 				B631404A2BCDB04D0075EBD2 /* User.swift in Sources */,
 				B69A52182B75B456004DB5D2 /* ProfileView.swift in Sources */,
 				B685E26C2BACFFC400CDE152 /* AuthView.swift in Sources */,
+				ACADA9392BCEC558008A621C /* SearchView.swift in Sources */,
 				B633CA752B64186B00FE1417 /* DBUser.swift in Sources */,
 				B6FB26FE2B06FBF300FE4C74 /* CourseView.swift in Sources */,
+				ACADA93D2BCEC8BA008A621C /* SearchCourse.swift in Sources */,
 				B633CA7C2B64196C00FE1417 /* RootView.swift in Sources */,
 				B685E26B2BACFFC400CDE152 /* AuthViewModel.swift in Sources */,
 				B6A080D42B19662D0051F87A /* CourseViewModel.swift in Sources */,

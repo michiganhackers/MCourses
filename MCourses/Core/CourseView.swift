@@ -18,7 +18,6 @@ struct CourseView: View {
         self.courseViewModel = CourseViewModel(course: course)
     }
     
-
     var body: some View {
        ScrollView {
             header
@@ -143,16 +142,18 @@ struct CourseView: View {
     }
     
     var writeReviewButton: some View {
-        Button {
-            // write review
-        } label: {
-            Text("Write Review")
-                .fontWeight(.medium)
-                .foregroundColor(.black)
-                .padding()
-                .background(maize, in: RoundedRectangle(cornerRadius: 10))
-                .padding()
-        }
+            Button {
+                // write review
+            } label: {
+                NavigationLink(destination: MakeReviewView()) {
+                    Text("Write Review")
+                        .fontWeight(.medium)
+                        .foregroundColor(.black)
+                        .padding()
+                        .background(maize, in: RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                }
+            }
     }
     
     var reviewView: some View {
