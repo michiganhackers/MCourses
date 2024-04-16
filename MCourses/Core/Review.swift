@@ -18,5 +18,5 @@ struct Review: Identifiable, Decodable {
     let workload: Double
     let worth: Double
     let enjoyment: Double
-    let upvote: Int
+    let votes: Int
 }
