@@ -1,4 +1,3 @@
-//
 //  FilterView.swift
 //  MCourses
 //
