@@ -13,14 +13,6 @@ struct RootView: View {
     var body: some View {
         ZStack {
             if !showSignInView {
-                CourseItemView(courseItem: CourseItem(
-                    name: "Data Structures and Algorithms",
-                    department: "EECS",
-                    number: 281,
-                    credits: 4,
-                    description: "Introduction to the algorithm analysis and O-notation; Fundamental data structures including lists, stacks, queues, priority queues, hash tables, binary trees, search trees, balanced, trees, and graphs; searching and sorting algorithms; recursive algorithms; basic graph algorithms; introduction to greedy algorithms and divide and conquer strategy. Several programming assignments.",
-                    avgRating: 4.5,
-                    avgDifficulty: 0.68))
                 TabView {
                     SettingsView(showSignInView: .constant(false))
                         .tabItem {
@@ -30,7 +22,7 @@ struct RootView: View {
                                 Label("Settings", systemImage: "gear")
                             }
                         }
-                    ProfileView(showSignInView: .constant(false))
+                    SearchView()
                         .tabItem {
                             Label("", systemImage: "globe")
                         }

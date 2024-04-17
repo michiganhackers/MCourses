@@ -1,6 +1,5 @@
-//
-//  ContentView.swift
-//  MCourses2
+//  FilterView.swift
+//  MCourses
 //
 //  Created by Ishani Das on 3/28/24.
 //

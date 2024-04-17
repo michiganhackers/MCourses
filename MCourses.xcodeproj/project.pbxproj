@@ -36,6 +36,11 @@
 		B65567F22B6413760036C0D7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B65567F12B6413760036C0D7 /* FirebaseFirestore */; };
 		B65567F42B6413760036C0D7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B65567F32B6413760036C0D7 /* FirebaseFirestoreSwift */; };
 		B65567F62B6413760036C0D7 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B65567F52B6413760036C0D7 /* FirebaseStorage */; };
+		B6673A4D2BCDBE010066BDED /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6673A4C2BCDBE010066BDED /* SearchView.swift */; };
+		B6673A4F2BCDBEB00066BDED /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6673A4E2BCDBEB00066BDED /* ClassView.swift */; };
+		B6673A512BCDC03D0066BDED /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6673A502BCDC03D0066BDED /* FilterView.swift */; };
+		B6673A532BCDC25D0066BDED /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6673A522BCDC25D0066BDED /* SearchViewModel.swift */; };
+		B6673A552BCDC2EF0066BDED /* CourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6673A542BCDC2EF0066BDED /* CourseService.swift */; };
 		B685E2692BACFFC400CDE152 /* GoogleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685E2632BACFFC300CDE152 /* GoogleSignInHelper.swift */; };
 		B685E26B2BACFFC400CDE152 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685E2652BACFFC300CDE152 /* AuthViewModel.swift */; };
 		B685E26C2BACFFC400CDE152 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685E2662BACFFC300CDE152 /* AuthView.swift */; };
@@ -93,6 +98,11 @@
 		B633CA782B6418BE00FE1417 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B633CA7B2B64196C00FE1417 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		B633CA7D2B641B8200FE1417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B6673A4C2BCDBE010066BDED /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		B6673A4E2BCDBEB00066BDED /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
+		B6673A502BCDC03D0066BDED /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		B6673A522BCDC25D0066BDED /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		B6673A542BCDC2EF0066BDED /* CourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseService.swift; sourceTree = "<group>"; };
 		B685E2632BACFFC300CDE152 /* GoogleSignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInHelper.swift; sourceTree = "<group>"; };
 		B685E2652BACFFC300CDE152 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		B685E2662BACFFC300CDE152 /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -224,6 +234,7 @@
 		B633CA7A2B64195C00FE1417 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B6673A4C2BCDBE010066BDED /* SearchView.swift */,
 				B69A52162B75B456004DB5D2 /* ProfileView.swift */,
 				B69A52152B75B456004DB5D2 /* ProfileViewModel.swift */,
 				ACADA93E2BCECA52008A621C /* FilterView.swift */,
@@ -242,6 +253,10 @@
 				AEF3D2642B06FBDE007785A8 /* MakeReviewView.swift */,
 				B63140452BCB657A0075EBD2 /* ReviewService.swift */,
 				B63140492BCDB04D0075EBD2 /* User.swift */,
+				B6673A4E2BCDBEB00066BDED /* ClassView.swift */,
+				B6673A502BCDC03D0066BDED /* FilterView.swift */,
+				B6673A522BCDC25D0066BDED /* SearchViewModel.swift */,
+				B6673A542BCDC2EF0066BDED /* CourseService.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -415,7 +430,7 @@
 				B63140462BCB657A0075EBD2 /* ReviewService.swift in Sources */,
 				B685E2692BACFFC400CDE152 /* GoogleSignInHelper.swift in Sources */,
 				B69A52172B75B456004DB5D2 /* ProfileViewModel.swift in Sources */,
-				ACADA93F2BCECA52008A621C /* FilterView.swift in Sources */,
+				B6673A512BCDC03D0066BDED /* FilterView.swift in Sources */,
 				B6A080D02B1962D00051F87A /* Course.swift in Sources */,
 				B69A521B2B75B4D4004DB5D2 /* StorageManager.swift in Sources */,
 				B633CA762B64186B00FE1417 /* UserManager.swift in Sources */,
@@ -424,16 +439,19 @@
 				B607A8632AF479000010D6DF /* CourseItem.swift in Sources */,
 				B69A52132B75B429004DB5D2 /* SettingsView.swift in Sources */,
 				B633CA792B6418BE00FE1417 /* Utilities.swift in Sources */,
+				B6673A552BCDC2EF0066BDED /* CourseService.swift in Sources */,
 				B631404A2BCDB04D0075EBD2 /* User.swift in Sources */,
 				B69A52182B75B456004DB5D2 /* ProfileView.swift in Sources */,
 				B685E26C2BACFFC400CDE152 /* AuthView.swift in Sources */,
-				ACADA9392BCEC558008A621C /* SearchView.swift in Sources */,
+				B6673A4D2BCDBE010066BDED /* SearchView.swift in Sources */,
 				B633CA752B64186B00FE1417 /* DBUser.swift in Sources */,
 				B6FB26FE2B06FBF300FE4C74 /* CourseView.swift in Sources */,
 				ACADA93D2BCEC8BA008A621C /* SearchCourse.swift in Sources */,
 				B633CA7C2B64196C00FE1417 /* RootView.swift in Sources */,
 				B685E26B2BACFFC400CDE152 /* AuthViewModel.swift in Sources */,
 				B6A080D42B19662D0051F87A /* CourseViewModel.swift in Sources */,
+				B6673A532BCDC25D0066BDED /* SearchViewModel.swift in Sources */,
+				B6673A4F2BCDBEB00066BDED /* ClassView.swift in Sources */,
 				B607A85F2AF476F90010D6DF /* CourseItemView.swift in Sources */,
 				B63244EE2AEB1A4B003C3C3D /* MCoursesApp.swift in Sources */,
 				B69A52142B75B429004DB5D2 /* SettingsViewModel.swift in Sources */,
