@@ -21,6 +21,9 @@ class SearchViewModel: ObservableObject, FetchCourses {
         Task { @MainActor in
             let fetchedCourses = try await courseService.fetchCourses()
             self.courses = fetchedCourses
+            print(fetchedCourses)
+            print("--------")
+            print(self.courses)
         }
     }
 }

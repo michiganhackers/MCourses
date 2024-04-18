@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var search: String = ""
-    
+    @StateObject var searchViewModel = SearchViewModel()
     var body: some View {
         VStack() {
             HStack() {
@@ -53,26 +53,18 @@ struct SearchView: View {
                             .foregroundStyle(.white)
                             .imageScale(.large)
                     }
-                }
+                }.tint(.white)
 
                 .frame(width: 68, height: 18)
             }
-            List {
-                ScrollView {
-                    VStack {
-                        ClassView(course: SearchCourse(name: "EECS 183: Elementary Programming Concepts"))
-                        ClassView(course: SearchCourse(name: "EECS 203: Discrete Mathemattics"))
-                        ClassView(course: SearchCourse(name: "EECS 280: Programming and Intro Data Structures"))
-                        ClassView(course: SearchCourse(name: "EECS 281: Data Structures and Algorithms"))
-                        ClassView(course: SearchCourse(name: "EECS 370: Intro to Computer Organization"))
-                        ClassView(course: SearchCourse(name: "EECS 376: Foundations of Computer Science"))
-                        ClassView(course: SearchCourse(name: "EECS 338: Introduction to Security"))
+            ScrollView {
+                LazyVStack{
+                    ForEach(searchViewModel.courses) { course in
+                        ClassView(course: course)
                     }
                 }
-                
             }
             .scrollContentBackground(.hidden)
-            .listStyle(GroupedListStyle()) // or PlainListStyle()
             
             Spacer()
         }
@@ -92,12 +84,20 @@ let sampleCourse2 = Course(
    reviews: [sampleReview1, sampleReview2])
 
 struct ClassView: View {
-    var course: SearchCourse
+    var course: Course
+    
+    init(course: Course) {
+        self.course = course
+    }
     
     var body: some View {
-        NavigationLink(destination: CourseView(course: sampleCourse2)) {
+        NavigationLink(destination: CourseView(course: course)) {
             VStack {
               // Title
+                Text("\(course.department) \(course.number)")
+                .font(Font.custom("SF Pro Text", size: 17).weight(.semibold))
+                .lineSpacing(22)
+                .foregroundColor(.black)
                 Text(course.name)
                 .font(Font.custom("SF Pro Text", size: 17).weight(.semibold))
                 .lineSpacing(22)
@@ -107,7 +107,7 @@ struct ClassView: View {
             .padding(EdgeInsets(top: 14, leading: 11, bottom: 24, trailing: 0))
             .frame(width: 375, height: 142)
         .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-        }
+        }.tint(.white)
     }
 }
 

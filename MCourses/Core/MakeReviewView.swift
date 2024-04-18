@@ -18,23 +18,6 @@ struct MakeReviewView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            ZStack {
-                VStack {
-                    Spacer()
-                        .frame(height: 8)
-                    HStack {
-                        Image(systemName: "chevron.backward")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 11)
-                            .foregroundColor(Color.white)
-                            .padding(.leading, 20)
-                            .padding(.bottom)
-                        Spacer()
-                    }
-                }
-            }
-            .background(Color.umBlue)
             VStack {
                 VStack() { //header content
                     HStack {

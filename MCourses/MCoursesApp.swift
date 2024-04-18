@@ -22,7 +22,7 @@ struct MCoursesApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                FilterView()
+                RootView()
             }
         }
     }

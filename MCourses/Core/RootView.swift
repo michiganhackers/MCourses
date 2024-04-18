@@ -14,17 +14,17 @@ struct RootView: View {
         ZStack {
             if !showSignInView {
                 TabView {
-                    SettingsView(showSignInView: .constant(false))
-                        .tabItem {
-                            NavigationLink {
-                                SettingsView(showSignInView: .constant(false))
-                            } label: {
-                                Label("Settings", systemImage: "gear")
-                            }
-                        }
                     SearchView()
                         .tabItem {
                             Label("", systemImage: "globe")
+                        }
+                    SettingsView(showSignInView: $showSignInView)
+                        .tabItem {
+                            NavigationLink {
+                                SettingsView(showSignInView: $showSignInView)
+                            } label: {
+                                Label("Settings", systemImage: "gear")
+                            }
                         }
                 }
             }
@@ -36,7 +36,7 @@ struct RootView: View {
         .fullScreenCover(isPresented: $showSignInView) {
             NavigationStack {
                 AuthView(showSignInView: $showSignInView)
-            }
+            }.tint(.white)
         }
     }
 }

@@ -60,11 +60,19 @@ struct CourseView: View {
     
     var score: some View {
         HStack(alignment: .center, spacing: 10) {
-            Text("\(courseViewModel.course.avgRating, specifier: "%.1f")/10")
-              .font(.title)
-              .bold()
-              .multilineTextAlignment(.center)
-              .foregroundColor(Color(red: 1, green: 0.8, blue: 0.02))
+            if courseViewModel.course.avgRating != -1.0 {
+                Text("\(courseViewModel.course.avgRating, specifier: "%.1f")/10")
+                    .font(.title)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(Color(red: 1, green: 0.8, blue: 0.02))
+            } else {
+                Text("No course ratings")
+                    .font(.title)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(Color(red: 1, green: 0.8, blue: 0.02))
+            }
         }
         .padding(.horizontal, 32)
         .padding(.vertical, 16)
@@ -73,58 +81,63 @@ struct CourseView: View {
     }
     
     var statistics: some View {
+        
         VStack(alignment: .leading) {
-            Text("Statistics").font(.title).bold()
-            Text("Workload").font(.headline).bold()
-            ZStack(alignment: .leading) {
-                Rectangle()
-                  .foregroundColor(.clear)
-                  .frame(width: 337, height: 28)
-                  .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                  .cornerRadius(32)
-                Rectangle()
-                  .foregroundColor(.clear)
-                  .frame(width: courseViewModel.course.avgWorkload*337/10, height: 28)
-                  .background(Color(red: 0, green: 0.15, blue: 0.3))
-                  .cornerRadius(22)
-                Text("\(Int(courseViewModel.course.avgWorkload*10))%")
-                    .font(.caption).bold()
-                  .foregroundColor(.white)
-                  .offset(x:10)
-            }
-            Text("Was it worth it?").font(.headline).bold()
-            ZStack(alignment: .leading) {
-                Rectangle()
-                  .foregroundColor(.clear)
-                  .frame(width: 337, height: 28)
-                  .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                  .cornerRadius(32)
-                Rectangle()
-                  .foregroundColor(.clear)
-                  .frame(width: courseViewModel.course.avgWorth*337/10, height: 28)
-                  .background(Color(red: 0, green: 0.15, blue: 0.3))
-                  .cornerRadius(22)
-                Text("\(Int(courseViewModel.course.avgWorth*10))%")
-                    .font(.caption).bold()
-                  .foregroundColor(.white)
-                  .offset(x:10)
-            }
-            Text("Enjoyment").font(.headline).bold()
-            ZStack(alignment: .leading) {
-                Rectangle()
-                  .foregroundColor(.clear)
-                  .frame(width: 337, height: 28)
-                  .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                  .cornerRadius(32)
-                Rectangle()
-                  .foregroundColor(.clear)
-                  .frame(width: courseViewModel.course.avgEnjoyment*337/10, height: 28)
-                  .background(Color(red: 0, green: 0.15, blue: 0.3))
-                  .cornerRadius(22)
-                Text("\(Int(courseViewModel.course.avgEnjoyment*10))%")
-                    .font(.caption).bold()
-                  .foregroundColor(.white)
-                  .offset(x:10)
+            if courseViewModel.course.avgRating != -1.0 {
+                Text("Statistics").font(.title).bold()
+                Text("Workload").font(.headline).bold()
+                ZStack(alignment: .leading) {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 337, height: 28)
+                        .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                        .cornerRadius(32)
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: courseViewModel.course.avgWorkload*337/10, height: 28)
+                        .background(Color(red: 0, green: 0.15, blue: 0.3))
+                        .cornerRadius(22)
+                    Text("\(Int(courseViewModel.course.avgWorkload*10))%")
+                        .font(.caption).bold()
+                        .foregroundColor(.white)
+                        .offset(x:10)
+                }
+                Text("Was it worth it?").font(.headline).bold()
+                ZStack(alignment: .leading) {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 337, height: 28)
+                        .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                        .cornerRadius(32)
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: courseViewModel.course.avgWorth*337/10, height: 28)
+                        .background(Color(red: 0, green: 0.15, blue: 0.3))
+                        .cornerRadius(22)
+                    Text("\(Int(courseViewModel.course.avgWorth*10))%")
+                        .font(.caption).bold()
+                        .foregroundColor(.white)
+                        .offset(x:10)
+                }
+                Text("Enjoyment").font(.headline).bold()
+                ZStack(alignment: .leading) {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 337, height: 28)
+                        .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                        .cornerRadius(32)
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: courseViewModel.course.avgEnjoyment*337/10, height: 28)
+                        .background(Color(red: 0, green: 0.15, blue: 0.3))
+                        .cornerRadius(22)
+                    Text("\(Int(courseViewModel.course.avgEnjoyment*10))%")
+                        .font(.caption).bold()
+                        .foregroundColor(.white)
+                        .offset(x:10)
+                }
+            } else {
+                Text("No available statistics").font(.title).bold()
             }
         }
     }
@@ -181,7 +194,7 @@ struct ReviewRow: View {
                 Spacer()
                 Text("\(review.professor)")
                 Spacer()
-                Text("\(review.rating)")
+                Text("Rating: \(review.rating, specifier: "%.1f")")
             }
             .bold()
             
