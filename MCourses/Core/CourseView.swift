@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct CourseView: View {
     @ObservedObject var courseViewModel: CourseViewModel
@@ -27,7 +28,12 @@ struct CourseView: View {
             writeReviewButton
             reviewView
         }
-        .ignoresSafeArea()
+       .refreshable {
+           Task { @MainActor in
+               try await self.courseViewModel.fetchReviews()
+           }
+       }
+       .ignoresSafeArea()
     }
     
     var header: some View {
@@ -158,7 +164,7 @@ struct CourseView: View {
             Button {
                 // write review
             } label: {
-                NavigationLink(destination: MakeReviewView()) {
+                NavigationLink(destination: MakeReviewView(courseViewModel: courseViewModel)) {
                     Text("Write Review")
                         .fontWeight(.medium)
                         .foregroundColor(.black)
@@ -174,8 +180,8 @@ struct CourseView: View {
             Text("Reviews")
                 .font(.largeTitle)
                 .bold()
-            ScrollView (){
-                ForEach(courseViewModel.course.reviews) { review in
+            ScrollView {
+                ForEach(courseViewModel.reviews) { review in
                     ReviewRow(review: review)
                 }
             }
@@ -202,9 +208,9 @@ struct ReviewRow: View {
             
             HStack(alignment: .lastTextBaseline) {
                 VStack() {
-                    Text("Workload: \(Int(review.workload))%")
-                    Text("Worth it: \(Int(review.worth))%")
-                    Text("Enjoyment: \(Int(review.enjoyment))%")
+                    Text("Workload: \(Int(review.workload * 10))%")
+                    Text("Worth it: \(Int(review.worth * 10))%")
+                    Text("Enjoyment: \(Int(review.enjoyment * 10))%")
                 }
                 .bold()
                 Spacer()
@@ -259,7 +265,7 @@ struct UpVotes: View {
 
 let sampleReview1 = Review(
     id: "1",
-    course: "Data Structures and Algorithms",
+    timestamp: Timestamp(date: Date()),
     semester: "Winter 2023",
     professor: "Jonathan Beaumont",
     review: "Enrolling in this course was a transformative experience that exceeded my expectations. The curriculum was well-structured, offering a comprehensive overview of the subject matter while delving deep into key concepts. The instructors demonstrated exceptional expertise, providing clear explanations and real-world applications that enhanced my understanding.",
@@ -272,7 +278,7 @@ let sampleReview1 = Review(
 
 let sampleReview2 = Review(
     id: "2",
-    course: "Data Structures and Algorithms",
+    timestamp: Timestamp(date: Date()),
     semester: "Fall 2023",
     professor: "Emily Graetz",
     review: "Enrolling in this course was a transformative experience that exceeded my expectations. The curriculum was well-structured, offering a comprehensive overview of the subject matter while delving deep into key concepts. The instructors demonstrated exceptional expertise, providing clear explanations and real-world applications that enhanced my understanding.",

@@ -5,12 +5,12 @@
 //  Created by Finn Moore on 11/30/23.
 //
 
-import Foundation
+import Firebase
+import FirebaseFirestoreSwift
 
 struct Review: Identifiable, Decodable {
     var id: String?
-    //let uid: String
-    let course: String
+    let timestamp: Timestamp
     let semester: String
     let professor: String
     let review: String

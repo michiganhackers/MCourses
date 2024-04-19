@@ -6,16 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct MakeReviewView: View {
+    @ObservedObject var courseViewModel: CourseViewModel
     @State private var term: String = ""
     @State private var professor: String = ""
     @State private var rating: String = ""
     @State private var workload: String = ""
-    @State private var worthit: String = ""
+    @State private var worth: String = ""
     @State private var enjoyment: String = ""
     @State private var review: String = ""
+    @State private var semester: String = ""
     
+    private let courseService = CourseService()
     var body: some View {
         VStack(spacing: 0) {
             VStack {
@@ -37,7 +41,7 @@ struct MakeReviewView: View {
                                 .foregroundColor(Color.white)
                         }
                         HStack(spacing: 8) {
-                            Text("EECS 388: Introduction to Security")
+                            Text(courseViewModel.course.name)
                                 .padding(8)
                                 .foregroundColor(Color.black)
                                 .font(
@@ -55,17 +59,19 @@ struct MakeReviewView: View {
             }
             ScrollView {
                 VStack {
-                    FormSelectItem(label: "Term taken", example: "WN 2024", text: $term, selectionArray: ["Cranberry", "Grape", "Banana", "Strawberry"])
+//                    FormSelectItem(label: "Term taken", example: "WN 2024", text: $term, selectionArray: ["Cranberry", "Grape", "Banana", "Strawberry"])
+                    FormTextItem(label: "Term", example: "WN24", text: $semester)
                     FormTextItem(label: "Professor taken with", example: "Jonathon Beaumont", text: $professor)
                     FormTextItem(label: "Rating", example: "Scale of 1-10", text: $rating)
-                    FormTextItem(label: "Workload", example: "Scale of 0-100%", text: $workload)
-                    FormTextItem(label: "Worth it", example: "Scale of 0-100%", text: $worthit)
-                    FormTextItem(label: "Enjoyment", example: "Scale of 0-100%", text: $enjoyment)
+                    FormTextItem(label: "Workload", example: "Scale of 0-100", text: $workload)
+                    FormTextItem(label: "Worth it", example: "Scale of 0-100", text: $worth)
+                    FormTextItem(label: "Enjoyment", example: "Scale of 0-100", text: $enjoyment)
                     FormTextItem(label: "Review", example: "Write your review here", text: $review)
                     Spacer()
                     Button(action: {
-                        // Handle the submit action here
-                        print("Submit button tapped.")
+                        Task {
+                            try await courseService.reviewCourse(course: courseViewModel.course, review: Review(id: UUID().uuidString, timestamp: Timestamp(date: Date()), semester: semester, professor: professor, review: review, rating: Double(rating)!, workload: Double(workload)! / 10.0, worth: Double(worth)! / 10.0, enjoyment: Double(enjoyment)! / 10.0, votes: 0))
+                        }
                     }) {
                         Text("Submit")
                             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 44) // Give the button a fixed height and make it expand horizontally
@@ -162,5 +168,5 @@ struct FormTextItem: View {
 }
 
 #Preview {
-    MakeReviewView()
+    MakeReviewView(courseViewModel: CourseViewModel(course: sampleCourse))
 }
